@@ -63,6 +63,7 @@ If you'd like to package the app yourself, please refer to the [FAQ](https://git
 <img src="doc/screenRecords/pnp_discovery.gif" alt="pnp_discovery" width="800"/>
 
 - Click the name of any component, and switch between interface, properties, commands and telemetry to start interacting with the PnP device.
+- Check out the [list of features that we support for Plug and Play Refresh](https://github.com/YingXue/azure-iot-explorer/wiki/Plug-and-Play-feature-list)
 
 <img src="doc/screenRecords/pnp_interaction.gif" alt="pnp_interaction" width="800"/>
 
