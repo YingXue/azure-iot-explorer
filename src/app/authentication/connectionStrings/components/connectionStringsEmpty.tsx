@@ -6,7 +6,7 @@ import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from '@fluentui/react';
 import { NavLink } from 'react-router-dom';
-import { ResourceKeys } from '../../../localization/resourceKeys';
+import { ResourceKeys } from '../../../../localization/resourceKeys';
 import './connectionStringsEmpty.scss';
 
 export const ConnectionStringsEmpty: React.FC = () => {

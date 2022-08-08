@@ -4,11 +4,11 @@
  **********************************************************/
 import { call, put } from 'redux-saga/effects';
 import { SagaIterator } from 'redux-saga';
-import { NotificationType } from '../../api/models/notification';
-import { raiseNotificationToast } from '../../notifications/components/notificationToast';
-import { CONNECTION_STRING_NAME_LIST } from '../../constants/browserStorage';
-import { getConnectionStringsAction } from './../actions';
-import { ResourceKeys } from '../../../localization/resourceKeys';
+import { NotificationType } from '../../../api/models/notification';
+import { raiseNotificationToast } from '../../../notifications/components/notificationToast';
+import { CONNECTION_STRING_NAME_LIST } from '../../../constants/browserStorage';
+import { getConnectionStringsAction } from '../actions';
+import { ResourceKeys } from '../../../../localization/resourceKeys';
 import { ConnectionStringWithExpiry } from '../state';
 import { setConnectionStrings } from './setConnectionStringsSaga';
 

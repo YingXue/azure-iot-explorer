@@ -6,10 +6,10 @@ import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Panel, PanelType, TextField, DefaultButton, PrimaryButton, Link } from '@fluentui/react';
 import { ConnectionStringProperties } from './connectionStringProperties';
-import { getConnectionInfoFromConnectionString } from '../../api/shared/utils';
-import { generateConnectionStringValidationError } from '../../shared/utils/hubConnectionStringHelper';
-import { IoTHubConnectionSettings } from '../../api/services/devicesService';
-import { ResourceKeys } from '../../../localization/resourceKeys';
+import { getConnectionInfoFromConnectionString } from '../../../api/shared/utils';
+import { generateConnectionStringValidationError } from '../../../shared/utils/hubConnectionStringHelper';
+import { IoTHubConnectionSettings } from '../../../api/services/devicesService';
+import { ResourceKeys } from '../../../../localization/resourceKeys';
 import { ConnectionStringWithExpiry } from '../state';
 import './connectionStringEditView.scss';
 

@@ -15,8 +15,6 @@ import { useBreadcrumbEntry } from '../../navigation/hooks/useBreadcrumbEntry';
 import { IotHub } from '../../iotHub/components/iotHub';
 import { ResourceKeys } from '../../../localization/resourceKeys';
 import { Header } from './header';
-import { AuthenticationtateContextProvider } from '../contexts/authenticationStateContext';
-import { useAuthenticationState } from '../authentication/hooks/authenticationStateHook';
 import '../../css/_application.scss';
 import '../../css/_mainArea.scss';
 
@@ -25,7 +23,6 @@ const NOTIFICATION_AUTO_CLOSE = 5000;
 export const Application: React.FC = () => {
     const { t } = useTranslation();
     useBreadcrumbEntry({ name: t(ResourceKeys.common.home), suffix: 'home' });
-    const [ authenticationState , authenticationApi] = useAuthenticationState();
 
     return (
         <div className="container">
@@ -36,14 +33,12 @@ export const Application: React.FC = () => {
                 <Breadcrumbs/>
             </div>
             <main className="main">
-                <AuthenticationtateContextProvider value={[authenticationState, authenticationApi]}>
                 <Switch>
-                        <Redirect from="/" exact={true} to={`${ROUTE_PARTS.HOME}`}/>
-                        <Route path={`/${ROUTE_PARTS.HOME}`} component={HomeView} />
-                        <Route path={'/microsoft.devices/'} component={IotHub} />
-                        <Route component={NoMatchError}/>
-                    </Switch>
-                </AuthenticationtateContextProvider>
+                    <Redirect from="/" exact={true} to={`${ROUTE_PARTS.HOME}`}/>
+                    <Route path={`/${ROUTE_PARTS.HOME}`} component={HomeView} />
+                    <Route path={'/microsoft.devices/'} component={IotHub} />
+                    <Route component={NoMatchError}/>
+                </Switch>
             </main>
             <ToastContainer
                 autoClose={NOTIFICATION_AUTO_CLOSE}

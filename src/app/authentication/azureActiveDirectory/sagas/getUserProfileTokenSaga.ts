@@ -4,9 +4,9 @@
  **********************************************************/
 import { call, put } from 'redux-saga/effects';
 import { getProfileToken } from '../../../api/services/authenticationService';
-import { getAuthenticatinTokenAction } from '../actions';
+import { getUserProfileTokenAction } from '../actions';
 
 export function* getTokenSaga() {
     const token: string = yield call(getProfileToken);
-    yield put(getAuthenticatinTokenAction.done({result: token}));
+    yield put(getUserProfileTokenAction.done({result: token}));
 }

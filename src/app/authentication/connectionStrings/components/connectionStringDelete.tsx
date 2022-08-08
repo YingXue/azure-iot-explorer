@@ -5,7 +5,7 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Dialog, DialogFooter, PrimaryButton, DefaultButton } from '@fluentui/react';
-import { ResourceKeys } from '../../../localization/resourceKeys';
+import { ResourceKeys } from '../../../../localization/resourceKeys';
 import './connectionStringDelete.scss';
 
 const ROWS_FOR_CONNECTION = 8;

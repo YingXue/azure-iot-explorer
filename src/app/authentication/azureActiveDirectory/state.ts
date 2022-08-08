@@ -4,16 +4,16 @@
  **********************************************************/
 import { Record } from 'immutable';
 import { SynchronizationStatus } from '../../api/models/synchronizationStatus';
-import { IM } from '../types/types';
+import { IM } from '../../shared/types/types';
 
-export interface AuthenticationStateInterface {
+export interface AzureActiveDirectoryStateInterface {
     synchronizationStatus: SynchronizationStatus;
     token: string;
 }
 
-export type AuthenticationStateType = IM<AuthenticationStateInterface>;
+export type AzureActiveDirectoryStateType = IM<AzureActiveDirectoryStateInterface>;
 
-export const authenticationStateInitial = Record<AuthenticationStateInterface>({
+export const azureActiveDirectoryStateInitial = Record<AzureActiveDirectoryStateInterface>({
     synchronizationStatus: SynchronizationStatus.initialized,
     token: undefined
 });

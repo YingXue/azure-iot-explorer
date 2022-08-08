@@ -3,7 +3,7 @@
  * Licensed under the MIT License
  **********************************************************/
 import actionCreatorFactory from 'typescript-fsa';
-import { DELETE, SET, UPSERT, GET } from '../constants/actionTypes';
+import { DELETE, SET, UPSERT, GET } from '../../constants/actionTypes';
 import { ConnectionStringWithExpiry } from './state';
 
 const actionCreator = actionCreatorFactory('CONNECTION_STRINGS');

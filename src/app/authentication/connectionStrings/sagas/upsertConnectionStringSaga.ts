@@ -5,7 +5,7 @@
 import { call, put } from 'redux-saga/effects';
 import { SagaIterator } from 'redux-saga';
 import { Action } from 'typescript-fsa';
-import { CONNECTION_STRING_LIST_MAX_LENGTH } from '../../constants/browserStorage';
+import { CONNECTION_STRING_LIST_MAX_LENGTH } from '../../../constants/browserStorage';
 import { upsertConnectionStringAction } from '../actions';
 import { setConnectionStrings } from './setConnectionStringsSaga';
 import { getConnectionStrings } from './getConnectionStringsSaga';

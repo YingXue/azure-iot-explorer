@@ -3,13 +3,13 @@
  * Licensed under the MIT License
  **********************************************************/
 import { takeLatest } from 'redux-saga/effects';
-import { getAuthenticatinTokenAction, loginAction, logoutAction } from './actions';
-import { getTokenSaga } from './sagas/getAuthenticationTokenSaga';
+import { getUserProfileTokenAction, loginAction, logoutAction } from './actions';
+import { getTokenSaga } from './sagas/getUserProfileTokenSaga';
 import { loginSaga } from './sagas/loginSaga';
 import { logoutSaga } from './sagas/logoutSaga';
 
-export function* authenticationSaga() {
-    yield takeLatest(getAuthenticatinTokenAction.started, getTokenSaga);
+export function* azureActiveDirectorySaga() {
+    yield takeLatest(getUserProfileTokenAction.started, getTokenSaga);
     yield takeLatest(loginAction.started, loginSaga);
     yield takeLatest(logoutAction.started, logoutSaga);
 }
