@@ -17,26 +17,26 @@ export const AzureActiveDirectoryCommandBar: React.FC = () => {
 
     const getCommandBarItems = () => {
         const items = [{
-            ariaLabel: 'Switch authentication method',
+            ariaLabel: t(ResourceKeys.authentication.autheSelection.switchAuthType),
             iconProps: { iconName: NAVIGATE_BACK },
             key: 'switch',
             onClick: switchAuth,
-            text: 'Switch authentication method'
+            text: t(ResourceKeys.authentication.autheSelection.switchAuthType)
         }];
 
         return !token ? [{
-                ariaLabel: t(ResourceKeys.authentication.command.login),
+                ariaLabel: t(ResourceKeys.authentication.azureActiveDirectory.command.login),
                 iconProps: { iconName: 'Signin' },
                 key: 'signin',
                 onClick: login,
-                text: t(ResourceKeys.authentication.command.login)
+                text: t(ResourceKeys.authentication.azureActiveDirectory.command.login)
             }, ...items] :
             [{
-                ariaLabel: t(ResourceKeys.authentication.command.logout),
+                ariaLabel: t(ResourceKeys.authentication.azureActiveDirectory.command.logout),
                 iconProps: { iconName: 'Signout' },
                 key: 'signout',
                 onClick: logout,
-                text: t(ResourceKeys.authentication.command.logout)
+                text: t(ResourceKeys.authentication.azureActiveDirectory.command.logout)
             }, ...items];
     };
 

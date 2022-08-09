@@ -2,9 +2,25 @@
 /* tslint:disable */
 export class ResourceKeys {
     public static authentication = {
-      command : {
-         login : "authentication.command.login",
-         logout : "authentication.command.logout",
+      autheSelection : {
+         header : "authentication.autheSelection.header",
+         selection : {
+            azureActiveDirectory : "authentication.autheSelection.selection.azureActiveDirectory",
+            comingSoon : "authentication.autheSelection.selection.comingSoon",
+            connectionString : "authentication.autheSelection.selection.connectionString",
+         },
+         subText : "authentication.autheSelection.subText",
+         switchAuthType : "authentication.autheSelection.switchAuthType",
+      },
+      azureActiveDirectory : {
+         command : {
+            login : "authentication.azureActiveDirectory.command.login",
+            logout : "authentication.azureActiveDirectory.command.logout",
+         },
+         notification : {
+            loginError : "authentication.azureActiveDirectory.notification.loginError",
+            logoutError : "authentication.azureActiveDirectory.notification.logoutError",
+         },
       },
    };
    public static azureResource = {

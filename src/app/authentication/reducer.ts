@@ -5,44 +5,43 @@
 import { reducerWithInitialState } from 'typescript-fsa-reducers';
 import { getLoginPreferenceAction, setLoginPreferenceAction } from './actions';
 import { getInitialAuthenticateState, AuthenticationStateInterface, AuthenticationMethodPreference } from './state';
-import { SynchronizationStatus } from '../api/models/synchronizationStatus';
 
 export const authenticationReducer = reducerWithInitialState<AuthenticationStateInterface>(getInitialAuthenticateState())
     .case(getLoginPreferenceAction.started, (state: AuthenticationStateInterface) => {
         return {
             ...state,
-            synchronizationStatus: SynchronizationStatus.working
+            formState: 'working'
         };
     })
     .case(getLoginPreferenceAction.done, (state: AuthenticationStateInterface, payload: {params: void, result: AuthenticationMethodPreference}) => {
         return {
             ...state,
-            preference: payload.result,
-            synchronizationStatus: SynchronizationStatus.fetched
+            formState: 'idle',
+            preference: payload.result
         };
     })
     .case(getLoginPreferenceAction.failed, (state: AuthenticationStateInterface) => {
         return {
             ...state,
-            synchronizationStatus: SynchronizationStatus.failed
+            formState: 'failed'
         };
     })
     .case(setLoginPreferenceAction.started, (state: AuthenticationStateInterface) => {
         return {
             ...state,
-            synchronizationStatus: SynchronizationStatus.working
+            formState: 'working'
         };
     })
     .case(setLoginPreferenceAction.done, (state: AuthenticationStateInterface, payload: {params: AuthenticationMethodPreference}) => {
         return {
             ...state,
-            preference: payload.params,
-            synchronizationStatus: SynchronizationStatus.upserted
+            formState: 'idle',
+            preference: payload.params
         };
     })
     .case(setLoginPreferenceAction.failed, (state: AuthenticationStateInterface) => {
         return {
             ...state,
-            synchronizationStatus: SynchronizationStatus.failed
+            formState: 'failed'
         };
     });

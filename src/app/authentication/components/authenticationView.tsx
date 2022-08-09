@@ -3,7 +3,6 @@
  * Licensed under the MIT License
  **********************************************************/
 import * as React from 'react';
-import { SynchronizationStatus } from '../../api/models/synchronizationStatus';
 import { MultiLineShimmer } from '../../shared/components/multiLineShimmer';
 import { HubSelection } from '../azureActiveDirectory/components/hubSelection';
 import { AzureActiveDirectoryStateContextProvider } from '../azureActiveDirectory/context/azureActiveDirectoryStateProvider';
@@ -14,21 +13,21 @@ import { AuthenticationMethodPreference } from '../state';
 import { AuthenticationSelection } from './authenticationSelection';
 
 export const AuthenticationView: React.FC = () => {
-    const [state, api] = useAuthenticationStateContext();
+    const [{ formState, preference }, api] = useAuthenticationStateContext();
     React.useEffect(() => {
         api.getLoginPreference();
     }, []); // tslint:disable-line: align
 
     return (
         <>
-            {state.synchronizationStatus === SynchronizationStatus.working && <MultiLineShimmer/>}
-            {!state.preference && <AuthenticationSelection/>}
-            {state.preference === AuthenticationMethodPreference.AzureAD &&
+            {formState === 'working' && <MultiLineShimmer/>}
+            {!preference && <AuthenticationSelection/>}
+            {preference === AuthenticationMethodPreference.AzureAD &&
                 <AzureActiveDirectoryStateContextProvider>
                     <HubSelection/>
                 </AzureActiveDirectoryStateContextProvider>
             }
-            {state.preference === AuthenticationMethodPreference.ConnectionString &&
+            {preference === AuthenticationMethodPreference.ConnectionString &&
                 <ConnectionStringStateContextProvider>
                     <ConnectionStringsView/>
                 </ConnectionStringStateContextProvider>

@@ -32,11 +32,11 @@ export const ConnectionStringCommandBar: React.FC<ConnectionStringCommandBarProp
                     text: t(ResourceKeys.connectionStrings.addConnectionCommand.label)
                 },
                 {
-                    ariaLabel: 'Switch authentication method',
+                    ariaLabel: t(ResourceKeys.authentication.autheSelection.switchAuthType),
                     iconProps: { iconName: NAVIGATE_BACK },
                     key: 'switch',
                     onClick: switchAuth,
-                    text: 'Switch authentication method'
+                    text: t(ResourceKeys.authentication.autheSelection.switchAuthType)
                 }
             ]}
         />

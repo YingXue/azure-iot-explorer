@@ -4,12 +4,15 @@
  **********************************************************/
 import * as React from 'react';
 import { CompoundButton, Stack } from '@fluentui/react';
+import { useTranslation } from 'react-i18next';
 import { useAuthenticationStateContext } from '../context/authenticationStateContext';
 import { AuthenticationMethodPreference } from '../state';
+import { ResourceKeys } from '../../../localization/resourceKeys';
 import './AuthenticationSelection.scss';
 
 export const AuthenticationSelection: React.FC = () => {
     const [, api] = useAuthenticationStateContext();
+    const { t } = useTranslation();
 
     const connectViaConnectionString = () => {
         api.setLoginPreference(AuthenticationMethodPreference.ConnectionString);
@@ -22,8 +25,8 @@ export const AuthenticationSelection: React.FC = () => {
     return (
         <div className="auth-slection-container">
             <Stack tokens={{ childrenGap: 10 }}>
-                <h3 role="heading" aria-level={1}>{'Welcome to Azure IoT Explorer, a cross-platform UI for interacting with devices attached to Azure IoT Hub'}</h3>
-                <span>Choose an authentication method and connect to an Azure IoT hub</span>
+                <h3 role="heading" aria-level={1}>{t(ResourceKeys.authentication.autheSelection.header)}</h3>
+                <span>{t(ResourceKeys.authentication.autheSelection.subText)}</span>
                 <Stack tokens={{ childrenGap: 80 }} horizontal={true} >
                     <CompoundButton
                         primary={true}
@@ -31,15 +34,15 @@ export const AuthenticationSelection: React.FC = () => {
                         onClick={connectViaConnectionString}
                         className="auth-selection-tile"
                     >
-                        Connect via IoT Hub connection string
+                        {t(ResourceKeys.authentication.autheSelection.selection.connectionString)}
                     </CompoundButton>
                     <CompoundButton
                         iconProps={{ iconName: 'AADLogo' }}
                         className="auth-selection-tile"
                         onClick={loginViaAad}
-                        secondaryText={'Coming soon'}
+                        secondaryText={t(ResourceKeys.authentication.autheSelection.selection.comingSoon)}
                     >
-                        Connect via Azure Active Directory
+                        {t(ResourceKeys.authentication.autheSelection.selection.azureActiveDirectory)}
                     </CompoundButton>
                 </Stack>
             </Stack>

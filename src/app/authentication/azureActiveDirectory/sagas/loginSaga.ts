@@ -6,7 +6,7 @@ import { call, put } from 'redux-saga/effects';
 import { raiseNotificationToast } from '../../../notifications/components/notificationToast';
 import { login } from '../../../api/services/authenticationService';
 import { loginAction } from '../actions';
-// import { ResourceKeys } from '../../../../localization/resourceKeys';
+import { ResourceKeys } from '../../../../localization/resourceKeys';
 import { NotificationType } from '../../../api/models/notification';
 
 export function* loginSaga() {
@@ -17,7 +17,7 @@ export function* loginSaga() {
     catch (error) {
         yield call(raiseNotificationToast, {
             text: {
-                translationKey: 'failed to login'
+                translationKey: ResourceKeys.authentication.azureActiveDirectory.notification.loginError
             },
             type: NotificationType.error
         });
