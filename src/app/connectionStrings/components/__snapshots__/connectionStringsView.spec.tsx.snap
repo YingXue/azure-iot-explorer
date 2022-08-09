@@ -7,8 +7,20 @@ exports[`ConnectionStringsView matches snapshot when connection strings present 
   />
   <div
     className="connection-strings"
-  />
-  <ConnectionStringsEmpty />
+  >
+    <ConnectionString
+      connectionStringWithExpiry={
+        Object {
+          "connectionString": "connectionString1",
+          "expiration": "Thu, 01 Jan 1970 00:00:00 GMT",
+        }
+      }
+      key="connectionString1"
+      onDeleteConnectionString={[Function]}
+      onEditConnectionString={[Function]}
+      onSelectConnectionString={[Function]}
+    />
+  </div>
 </div>
 `;
 

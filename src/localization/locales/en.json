@@ -948,7 +948,7 @@
     },
     "authentication": {
         "command": {
-            "login": "Login through Azure Active Directory",
+            "login": "Login",
             "logout": "Logout"
         }
     }
