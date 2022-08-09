@@ -3,10 +3,25 @@
  * Licensed under the MIT License
  **********************************************************/
 import { call, put } from 'redux-saga/effects';
+import { raiseNotificationToast } from '../../../notifications/components/notificationToast';
 import { login } from '../../../api/services/authenticationService';
 import { loginAction } from '../actions';
+// import { ResourceKeys } from '../../../../localization/resourceKeys';
+import { NotificationType } from '../../../api/models/notification';
 
 export function* loginSaga() {
-    yield call(login);
-    yield put(loginAction.done({}));
+    try {
+        yield call(login);
+        yield put(loginAction.done({}));
+    }
+    catch (error) {
+        yield call(raiseNotificationToast, {
+            text: {
+                translationKey: 'failed to login'
+            },
+            type: NotificationType.error
+        });
+
+        yield put(loginAction.failed({error}));
+    }
 }

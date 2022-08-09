@@ -5,7 +5,7 @@
 import { reducerWithInitialState } from 'typescript-fsa-reducers';
 import { deleteConnectionStringAction, setConnectionStringsAction, upsertConnectionStringAction, getConnectionStringsAction } from './actions';
 import { connectionStringsStateInitial, ConnectionStringsStateType, ConnectionStringWithExpiry } from './state';
-import { SynchronizationStatus } from '../../api/models/synchronizationStatus';
+import { SynchronizationStatus } from '../api/models/synchronizationStatus';
 
 export const connectionStringsReducer = reducerWithInitialState<ConnectionStringsStateType>(connectionStringsStateInitial())
     .case(getConnectionStringsAction.started, (state: ConnectionStringsStateType) => {

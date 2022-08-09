@@ -214,29 +214,13 @@ export class ResourceKeys {
    };
    public static connectivityPane = {
       connectionStringComboBox : {
-         ariaLabel : "connectivityPane.connectionStringComboBox.ariaLabel",
-         ariaLabelRemove : "connectivityPane.connectionStringComboBox.ariaLabelRemove",
          errorMessages : {
             invalid : "connectivityPane.connectionStringComboBox.errorMessages.invalid",
             required : "connectivityPane.connectionStringComboBox.errorMessages.required",
          },
-         item : {
-            ariaLabel : "connectivityPane.connectionStringComboBox.item.ariaLabel",
-         },
-         label : "connectivityPane.connectionStringComboBox.label",
          link : "connectivityPane.connectionStringComboBox.link",
          linkText : "connectivityPane.connectionStringComboBox.linkText",
-         prompt : "connectivityPane.connectionStringComboBox.prompt",
          warning : "connectivityPane.connectionStringComboBox.warning",
-      },
-      dropDown : {
-         copyButton : "connectivityPane.dropDown.copyButton",
-         newEntry : "connectivityPane.dropDown.newEntry",
-      },
-      header : "connectivityPane.header",
-      notes : "connectivityPane.notes",
-      saveButton : {
-         label : "connectivityPane.saveButton.label",
       },
    };
    public static deviceCommands = {

@@ -3,9 +3,9 @@
  * Licensed under the MIT License
  **********************************************************/
 import { Record } from 'immutable';
-import { IM } from '../../shared/types/types';
-import { SynchronizationWrapper } from '../../api/models/synchronizationWrapper';
-import { SynchronizationStatus } from '../../api/models/synchronizationStatus';
+import { IM } from '../shared/types/types';
+import { SynchronizationWrapper } from '../api/models/synchronizationWrapper';
+import { SynchronizationStatus } from '../api/models/synchronizationStatus';
 
 export interface ConnectionStringsStateInterface extends SynchronizationWrapper<ConnectionStringWithExpiry[]>{}
 

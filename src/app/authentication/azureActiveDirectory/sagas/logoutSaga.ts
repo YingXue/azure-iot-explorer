@@ -7,6 +7,11 @@ import { logout } from '../../../api/services/authenticationService';
 import { logoutAction } from '../actions';
 
 export function* logoutSaga() {
-    yield call(logout);
-    yield put(logoutAction.done({}));
+    try {
+        yield call(logout);
+        yield put(logoutAction.done({}));
+    }
+    catch (error) {
+        yield put(logoutAction.failed({error}));
+    }
 }

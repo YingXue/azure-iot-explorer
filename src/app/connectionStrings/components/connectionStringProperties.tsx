@@ -4,8 +4,8 @@
  **********************************************************/
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
-import { MaskedCopyableTextField } from '../../../shared/components/maskedCopyableTextField';
-import { ResourceKeys } from '../../../../localization/resourceKeys';
+import { MaskedCopyableTextField } from '../../shared/components/maskedCopyableTextField';
+import { ResourceKeys } from '../../../localization/resourceKeys';
 
 export interface ConnectionStringPropertiesProps {
     connectionString: string;

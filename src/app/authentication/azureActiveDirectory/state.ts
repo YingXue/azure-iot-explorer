@@ -2,18 +2,12 @@
  * Copyright (c) Microsoft Corporation. All rights reserved.
  * Licensed under the MIT License
  **********************************************************/
-import { Record } from 'immutable';
-import { SynchronizationStatus } from '../../api/models/synchronizationStatus';
-import { IM } from '../../shared/types/types';
-
 export interface AzureActiveDirectoryStateInterface {
-    synchronizationStatus: SynchronizationStatus;
+    formState: 'initialized' | 'loggedIn' | 'loggedOut' | 'working' | 'failed' | 'idle';
     token: string;
 }
 
-export type AzureActiveDirectoryStateType = IM<AzureActiveDirectoryStateInterface>;
-
-export const azureActiveDirectoryStateInitial = Record<AzureActiveDirectoryStateInterface>({
-    synchronizationStatus: SynchronizationStatus.initialized,
+export const getInitialAzureActiveDirectoryStateInitial = (): AzureActiveDirectoryStateInterface => ({
+    formState: 'initialized',
     token: undefined
 });

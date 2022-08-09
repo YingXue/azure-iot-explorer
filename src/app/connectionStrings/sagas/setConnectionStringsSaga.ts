@@ -4,7 +4,7 @@
  **********************************************************/
 import { call, put } from 'redux-saga/effects';
 import { Action } from 'typescript-fsa';
-import { CONNECTION_STRING_NAME_LIST } from '../../../constants/browserStorage';
+import { CONNECTION_STRING_NAME_LIST } from '../../constants/browserStorage';
 import { setConnectionStringsAction } from '../actions';
 import { ConnectionStringWithExpiry } from '../state';
 

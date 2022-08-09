@@ -7,20 +7,20 @@ import { useTranslation } from 'react-i18next';
 import { useHistory } from 'react-router-dom';
 import { ConnectionString  } from './connectionString';
 import { ConnectionStringEditView } from './connectionStringEditView';
-import { ResourceKeys } from '../../../../localization/resourceKeys';
-import { ROUTE_PARTS } from '../../../constants/routes';
-import { formatConnectionStrings, getExpiryDateInUtcString } from '../../../shared/utils/hubConnectionStringHelper';
+import { ResourceKeys } from '../../../localization/resourceKeys';
+import { ROUTE_PARTS } from '../../constants/routes';
+import { formatConnectionStrings, getExpiryDateInUtcString } from '../../shared/utils/hubConnectionStringHelper';
 import { ConnectionStringsEmpty } from './connectionStringsEmpty';
 import {  ConnectionStringWithExpiry } from '../state';
-import { SynchronizationStatus } from '../../../api/models/synchronizationStatus';
-import { MultiLineShimmer } from '../../../shared/components/multiLineShimmer';
-import { getConnectionInfoFromConnectionString } from '../../../api/shared/utils';
-import { useBreadcrumbEntry } from '../../../navigation/hooks/useBreadcrumbEntry';
-import { AppInsightsClient } from '../../../shared/appTelemetry/appInsightsClient';
-import { TELEMETRY_PAGE_NAMES } from '../../../constants/telemetry';
+import { SynchronizationStatus } from '../../api/models/synchronizationStatus';
+import { MultiLineShimmer } from '../../shared/components/multiLineShimmer';
+import { getConnectionInfoFromConnectionString } from '../../api/shared/utils';
+import { useBreadcrumbEntry } from '../../navigation/hooks/useBreadcrumbEntry';
+import { AppInsightsClient } from '../../shared/appTelemetry/appInsightsClient';
+import { TELEMETRY_PAGE_NAMES } from '../../constants/telemetry';
 import { useConnectionStringContext } from '../context/connectionStringStateContext';
-import { ConnectionStringCommandBar } from './connectionStringCommandBar';
-import '../../../css/_layouts.scss';
+import { ConnectionStringCommandBar } from './commandBar';
+import '../../css/_layouts.scss';
 import './connectionStringsView.scss';
 
 // tslint:disable-next-line: cyclomatic-complexity
@@ -29,7 +29,6 @@ export const ConnectionStringsView: React.FC = () => {
     const history = useHistory();
     useBreadcrumbEntry({name: t(ResourceKeys.breadcrumb.resources)});
     const [ state, api ] = useConnectionStringContext();
-
     const [ connectionStringUnderEdit, setConnectionStringUnderEdit ] = React.useState<string>(undefined);
 
     const connectionStringsWithExpiry = state.payload;
@@ -76,7 +75,6 @@ export const ConnectionStringsView: React.FC = () => {
 
     React.useEffect(() => {
         api.getConnectionStrings();
-        // getToken();
     },              []);
 
     React.useEffect(() => {

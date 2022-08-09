@@ -5,16 +5,16 @@
 import * as React from 'react';
 import { useTranslation } from 'react-i18next';
 import { IconButton, ActionButton, Link } from '@fluentui/react';
-import { getConnectionInfoFromConnectionString } from '../../../api/shared/utils';
-import { getResourceNameFromHostName } from '../../../api/shared/hostNameUtils';
+import { getConnectionInfoFromConnectionString } from '../../api/shared/utils';
+import { getResourceNameFromHostName } from '../../api/shared/hostNameUtils';
 import { ConnectionStringProperties } from './connectionStringProperties';
-import { ResourceKeys } from '../../../../localization/resourceKeys';
+import { ResourceKeys } from '../../../localization/resourceKeys';
 import { ConnectionStringDelete } from './connectionStringDelete';
-import { MaskedCopyableTextField } from '../../../shared/components/maskedCopyableTextField';
-import { EDIT, REMOVE } from '../../../constants/iconNames';
+import { MaskedCopyableTextField } from '../../shared/components/maskedCopyableTextField';
+import { EDIT, REMOVE } from '../../constants/iconNames';
 import { ConnectionStringWithExpiry } from '../state';
-import { CONNECTION_STRING_EXPIRATION_WARNING_IN_DAYS } from '../../../constants/browserStorage';
-import { getDaysBeforeHubConnectionStringExpires } from '../../../shared/utils/hubConnectionStringHelper';
+import { CONNECTION_STRING_EXPIRATION_WARNING_IN_DAYS } from '../../constants/browserStorage';
+import { getDaysBeforeHubConnectionStringExpires } from '../../shared/utils/hubConnectionStringHelper';
 import './connectionString.scss';
 
 export interface ConnectionStringProps {

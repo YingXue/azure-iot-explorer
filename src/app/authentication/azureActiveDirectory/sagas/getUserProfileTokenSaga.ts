@@ -7,6 +7,11 @@ import { getProfileToken } from '../../../api/services/authenticationService';
 import { getUserProfileTokenAction } from '../actions';
 
 export function* getTokenSaga() {
-    const token: string = yield call(getProfileToken);
-    yield put(getUserProfileTokenAction.done({result: token}));
+    try {
+        const token: string = yield call(getProfileToken);
+        yield put(getUserProfileTokenAction.done({result: token}));
+    }
+    catch (error) {
+        yield put(getUserProfileTokenAction.failed({error}));
+    }
 }

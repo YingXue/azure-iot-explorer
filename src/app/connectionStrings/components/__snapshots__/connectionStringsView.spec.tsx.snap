@@ -1,0 +1,25 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConnectionStringsView matches snapshot when connection strings present 1`] = `
+<div>
+  <ConnectionStringCommandBar
+    onAddConnectionStringClick={[Function]}
+  />
+  <div
+    className="connection-strings"
+  />
+  <ConnectionStringsEmpty />
+</div>
+`;
+
+exports[`ConnectionStringsView matches snapshot when no connection strings 1`] = `
+<div>
+  <ConnectionStringCommandBar
+    onAddConnectionStringClick={[Function]}
+  />
+  <div
+    className="connection-strings"
+  />
+  <ConnectionStringsEmpty />
+</div>
+`;

@@ -3,12 +3,12 @@
  * Licensed under the MIT License
  **********************************************************/
 import * as React from 'react';
-import { azureActiveDirectoryStateInitial, AzureActiveDirectoryStateInterface } from '../state';
+import { getInitialAzureActiveDirectoryStateInitial, AzureActiveDirectoryStateInterface } from '../state';
 import { AzureActiveDirectoryInterface } from './azureActiveDirectoryStateProvider';
 
 export const AzureActiveDirectoryStateContext = React.createContext<[AzureActiveDirectoryStateInterface, AzureActiveDirectoryInterface]>
     ([
-        azureActiveDirectoryStateInitial(),
+        getInitialAzureActiveDirectoryStateInitial(),
         {
             getToken: () => undefined,
             login: () => undefined,

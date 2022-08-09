@@ -2,7 +2,7 @@
  * Copyright (c) Microsoft Corporation. All rights reserved.
  * Licensed under the MIT License
  **********************************************************/
-import { ConnectionStringWithExpiry } from '../../authentication/connectionStrings/state';
+import { ConnectionStringWithExpiry } from '../../connectionStrings/state';
 import { ResourceKeys } from '../../../localization/resourceKeys';
 import { CONNECTION_STRING_EXPIRATION_IN_YEAR, CONNECTION_STRING_LIST_MAX_LENGTH } from '../../constants/browserStorage';
 import { getConnectionInfoFromConnectionString } from './../../api/shared/utils';
